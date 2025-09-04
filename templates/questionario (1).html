@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+       <!-- Adicionar funcionalidades bootstrap  -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-rbs5yuEIkI6xT1nMz9xRTY0uqadM+BQTU8VKdV4+uC4FhUn/xJ9HJ23dZOBOYezt" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-o3CfNqzucNO09Fap3QFRvj9p1yJHvDWEgeKPSxbsqj5pbqE4U2nU5w6o/DJx2f9U" crossorigin="anonymous"></script>
+    <!-- outras tags head -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- outras meta tags -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='mdb5-free-standard/css/mdb.min.css' )}}">
+    <meta charset="UTF-8">
+    <title>Autodiagnóstico de Prontidão Digital</title>
+   </head>
+ <body>
+  <form id="meuFormulario" method="post" action="/questionario" class="was-validated">
+   <!-- Stepper -->
+               <div class="container">
+                  <ul class="nav nav-pills">
+
+                     <li class="nav-item">
+                         <a class="nav-link" id="step1-tab" href="#step1">Info</a>     <!--inclua dentro este comando para dar acesso ao usuario mudar de abas: data-bs-toggle="pill"-->
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" id="step2-tab" href="#step2">1</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" id="step3-tab" href="#step3">2</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" id="step4-tab" href="#step4">3</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" id="step5-tab" href="#step5">4</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" id="step6-tab" href="#step6">5</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" id="step7-tab" href="#step7">6</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" id="step8-tab" href="#step8">7</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" id="step9-tab" href="#step9">8</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" id="step10-tab" href="#step10">9</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" id="step11-tab" href="#step11">10</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" id="step12-tab" href="#step12">11</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" id="step13-tab" href="#step13">12</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" id="step14-tab" href="#step14">13</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" id="step15-tab" href="#step15">14</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" id="step16-tab" href="#step16">15</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" id="step17-tab" href="#step17">16</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" id="step18-tab" href="#step18">17</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" id="step19-tab" href="#step19">18</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" id="step20-tab" href="#step20">19</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" id="step21-tab" href="#step21">20</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" id="step22-tab" href="#step22">21</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" id="step23-tab" href="#step23">22</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" id="step24-tab" href="#step24">23</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" id="step25-tab" href="#step25">24</a>
+                     </li>
+                  </ul>
+               </div>
+
+                 <!-- Conteúdo do Stepper -->
+               <div class="container tab-content">
+
+                        <!--Questão 25 -->
+                             <div class="mx-0 mx-sm-auto tab-pane fade " id="step1">
+                                <h1 class="h1-responsive">Autodiagnóstico de Prontidão Digital</h1>
+                                    <div class="mb-3">
+								      <label for="email" class="form-label">Email:</label>
+								      <input type="email" class="form-control" id="email" name="email" required>
+                                      <label  for="tempo" class="form-label">Tempo de trabalho na Instituição:(exemplo:2 anos)</label>
+                                      <input type="text" class="form-control" id="tempo" name="tempo" required>
+
+                                      <label for="setor" class="form-label">Setor ou Instituto:</label>
+                                        <select name="setor" id="setor" class="form-select" required>
+                                            <option value="" disabled selected>Selecione um setor</option>
+                                            <optgroup label="UFMT - Campus Universitário do Araguaia">
+                                                <option value="Pro-Reitoria">Pró-Reitoria</option>
+                                                <option value="GAP">GAP-Gerência de Administração e Planejamento</option>
+                                                <option value="GGE">GGE-Gerência de Graduação e Extensão</option>
+                                                <option value="GPGP">GPGP-Gerência de Pós Graduação e Pesquisa</option>
+                                                <option value="ICBS">ICBS-Instituto de Ciências Biológicas e da Saúde</option>
+                                                <option value="ICET">ICET-Instituto de Ciências Exatas e da Terra</option>
+                                                <option value="ICHS">ICHS-Instituto de Ciências Humanas e Sociais</option>
+                                                <option value="Prefeitura">Prefeitura</option>
+                                            </optgroup>
+                                            </select>
+                                        <label class="form-label d-block">Servidor:</label>
+                                        <input type="radio" name="tipo_usuario" value="professor" class="form-check-input" required>
+                                        <label for="professor" class="form-check-label">Professor(a)</label>
+                                        <input type="radio" name="tipo_usuario" value="tecnico" class="form-check-input" required>
+                                        <label for="tecnico" class="form-check-label">Técnico(a)</label>
+                                    </div>
+                                     <!-- Botão 1  -->
+                                     <div class="text-end mt-3">
+                                         <button type="button" class="btn btn-primary" data-question="1" id="next1">Próxima</button>
+                                     </div>
+                             </div>
+
+
+                     <!-- Questão 1 ---------------------------------------------------------------->
+                       <div class="mx-0 mx-sm-auto tab-pane fade" id="step2">
+                        <!-- ... (Código da pergunta 1) ... -->
+                          <p>
+                             <strong class="text-dark">Questão 1: Na sua opinião, o Campus Universitário do Araguaia – UFMT, utiliza de estratégias para melhoria da comunicação interna e interinstitucional utilizando de meios digitais como site institucional e redes sociais, atualizando dados sobre ensino, pesquisa, extensão e gestão?</strong>
+                          <small class="d-block">Marque 0 para insatisfatório e 10 para satisfatório</small>
+                          </p>
+                          <div class="form-check form-check-inline">
+                            <input type="radio" id="opcao_estrategia1_0" name="estrategia1" value="0" required> <label for="opcao_estrategia1_0">0</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input type="radio" id="opcao_estrategia1_1" name="estrategia1" value="1" required> <label for="opcao_estrategia1_1">1</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input type="radio" id="opcao_estrategia1_2" name="estrategia1" value="2" required> <label for="opcao_estrategia1_2">2</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input type="radio" id="opcao_estrategia1_3" name="estrategia1" value="3" required> <label for="opcao_estrategia1_3">3</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input type="radio" id="opcao_estrategia1_4" name="estrategia1" value="4" required> <label for="opcao_estrategia1_4">4</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input type="radio" id="opcao_estrategia1_5" name="estrategia1" value="5" required> <label for="opcao_estrategia1_5">5</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input type="radio" id="opcao_estrategia1_6" name="estrategia1" value="6" required> <label for="opcao_estrategia1_6">6</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input type="radio" id="opcao_estrategia1_7" name="estrategia1" value="7" required> <label for="opcao_estrategia1_7">7</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input type="radio" id="opcao_estrategia1_8" name="estrategia1" value="8" required> <label for="opcao_estrategia1_8">8</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input type="radio" id="opcao_estrategia1_9" name="estrategia1" value="9" required> <label for="opcao_estrategia1_9">9</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input type="radio" id="opcao_estrategia1_10" name="estrategia1" value="10" required> <label for="opcao_estrategia1_10">10</label>
+                          </div>
+                          <!-- Botão 1 "Próxima" -->
+                          <div class="text-end mt-3">
+                            <button type="button" class="btn btn-primary" data-question="2" id="next2">Próxima</button>
+                          </div>
+                       </div>
+
+                     <!-- Questão 2 ---------------------------------------------------------------------->
+                      <div class="mx-0 mx-sm-auto tab-pane fade" id="step3">
+                         <!-- ... (Código da pergunta 2) ... -->
+                         <p>
+                           <strong>Questão 2: Em termos estratégicos, em que nível o campus do Araguaia - UFMT emprega serviços de ensino, pesquisa, extensão e gestão baseados em <span data-bs-toggle="tooltip" data-placement="top" title="Uma nuvem é uma metáfora para serviços de computação em nuvem, que são serviços fornecidos pela internet. Exemplo: Amazon Web Services e Google Drive" style="color: blue;">nuvem</span>?</strong>
+                            <small class="d-block">Marque 0 para insatisfatório e 10 para satisfatório</small>
+                         </p>
+                        <div class="form-check form-check-inline">
+                           <input type="radio" id="opcao_estrategia2_0" name="estrategia2" value="0" required> <label for="opcao_estrategia2_0">0</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input type="radio" id="opcao_estrategia2_1" name="estrategia2" value="1" required> <label for="opcao_estrategia2_1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                         <input type="radio" id="opcao_estrategia2_2" name="estrategia2" value="2" required> <label for="opcao_estrategia2_2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                         <input type="radio" id="opcao_estrategia2_3" name="estrategia2" value="3" required> <label for="opcao_estrategia2_3">3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                         <input type="radio" id="opcao_estrategia2_4" name="estrategia2" value="4" required> <label for="opcao_estrategia2_4">4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                         <input type="radio" id="opcao_estrategia2_5" name="estrategia2" value="5" required> <label for="opcao_estrategia2_5">5</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                         <input type="radio" id="opcao_estrategia2_6" name="estrategia2" value="6" required> <label for="opcao_estrategia2_6">6</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                         <input type="radio" id="opcao_estrategia2_7" name="estrategia2" value="7" required> <label for="opcao_estrategia2_7">7</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                         <input type="radio" id="opcao_estrategia2_8" name="estrategia2" value="8" required> <label for="opcao_estrategia2_8">8</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                         <input type="radio" id="opcao_estrategia2_9" name="estrategia2" value="9" required> <label for="opcao_estrategia2_9">9</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                         <input type="radio" id="opcao_estrategia2_10" name="estrategia2" value="10" required> <label for="opcao_estrategia2_10">10</label>
+                        </div>
+                        <!-- Botão 2 "Próxima" -->
+                        <div class="text-end mt-3">
+                         <button type="button" class="btn btn-primary" data-question="3" id="next3">Próxima</button>
+                        </div>
+                        <small class="d-block">Obs:Passe o mouse ou clique nos termos destacados em azul para saber seu significado</small>
+                      </div>
+
+                      <!-- questão 3 -------------------------------------------------------------------->
+                       <div class="mx-0 mx-sm-auto tab-pane fade" id="step4">
+                        <!-- ... (Código da pergunta 3) ... -->
+                         <p>
+                             <strong class="text-dark">Questão 3: O Campus Universitário do Araguaia – UFMT tem trabalhado no planejamento para <span data-bs-toggle="tooltip" data-bs-placement="top" title=" A automatização é utilizada para otimizar processos, aumentar a eficiência e permitir uma tomada de decisão mais rápida e informada. Exemplo: TI - Envio de emails automáticos aos solicitantes para mantê-los informados sobre o status da requisição. "><strong style="color: blue;">automatização</strong></span> e integração dos sistemas de gestão acadêmicos e administrativos?</strong>
+                            <small class="d-block">Marque 0 para insatisfatório e 10 para satisfatório</small>
+                         </p>
+                         <div class="form-check form-check-inline">
+                             <input type="radio" id="opcao_estrategia3_0" name="estrategia3" value="0" required> <label for="opcao_estrategia3_0">0</label>
+                         </div>
+                         <div class="form-check form-check-inline">
+                             <input type="radio" id="opcao_estrategia3_1" name="estrategia3" value="1" required> <label for="opcao_estrategia3_1">1</label>
+                         </div>
+                         <div class="form-check form-check-inline">
+                             <input type="radio" id="opcao_estrategia3_2" name="estrategia3" value="2" required> <label for="opcao_estrategia3_2">2</label>
+                         </div>
+                         <div class="form-check form-check-inline">
+                             <input type="radio" id="opcao_estrategia3_3" name="estrategia3" value="3" required> <label for="opcao_estrategia3_3">3</label>
+                         </div>
+                         <div class="form-check form-check-inline">
+                             <input type="radio" id="opcao_estrategia3_4" name="estrategia3" value="4" required> <label for="opcao_estrategia3_4">4</label>
+                         </div>
+                         <div class="form-check form-check-inline">
+                             <input type="radio" id="opcao_estrategia3_5" name="estrategia3" value="5" required> <label for="opcao_estrategia3_5">5</label>
+                         </div>
+                         <div class="form-check form-check-inline">
+                             <input type="radio" id="opcao_estrategia3_6" name="estrategia3" value="6" required> <label for="opcao_estrategia3_6">6</label>
+                         </div>
+                         <div class="form-check form-check-inline">
+                             <input type="radio" id="opcao_estrategia3_7" name="estrategia3" value="7" required> <label for="opcao_estrategia3_7">7</label>
+                         </div>
+                         <div class="form-check form-check-inline">
+                             <input type="radio" id="opcao_estrategia3_8" name="estrategia3" value="8" required> <label for="opcao_estrategia3_8">8</label>
+                         </div>
+                         <div class="form-check form-check-inline">
+                             <input type="radio" id="opcao_estrategia3_9" name="estrategia3" value="9" required> <label for="opcao_estrategia3_9">9</label>
+                         </div>
+                         <div class="form-check form-check-inline">
+                             <input type="radio" id="opcao_estrategia3_10" name="estrategia3" value="10" required> <label for="opcao_estrategia3_10">10</label>
+                         </div>
+                         <!-- Botão "Próxima" -->
+                         <div class="text-end mt-3">
+                             <button type="button" class="btn btn-primary" data-question="4" id="next4">Próxima</button>
+                         </div>
+                         <small class="d-block">Obs:Passe o mouse ou clique nos termos destacados em azul para saber seu significado</small>
+                       </div>
+                       <!--  Questão 4 ------------------------------------------------------------------->
+                        <div class="mx-0 mx-sm-auto tab-pane fade" id="step5">
+                            <!-- Conteúdo da Pergunta 4 -->
+                             <!-- ... (código da pergunta 4) ... -->
+                             <p>
+                                 <strong class="text-dark">Questão 4: Na sua opinião o Campus Universitário do Araguaia – UFMT possui estratégias para apoiar invenções e gerações de patentes?</strong>
+                                <small class="d-block">Marque 0 para insatisfatório e 10 para satisfatório</small>
+                             </p>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia4_0" name="estrategia4" value="0" required> <label for="opcao_estrategia4_0">0</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia4_1" name="estrategia4" value="1" required> <label for="opcao_estrategia4_1">1</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia4_2" name="estrategia4" value="2" required> <label for="opcao_estrategia4_2">2</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia4_3" name="estrategia4" value="3" required> <label for="opcao_estrategia4_3">3</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia4_4" name="estrategia4" value="4" required> <label for="opcao_estrategia4_4">4</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia4_5" name="estrategia4" value="5" required> <label for="opcao_estrategia4_5">5</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia4_6" name="estrategia4" value="6" required> <label for="opcao_estrategia4_6">6</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia4_7" name="estrategia4" value="7" required> <label for="opcao_estrategia4_7">7</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia4_8" name="estrategia4" value="8" required> <label for="opcao_estrategia4_8">8</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia4_9" name="estrategia4" value="9" required> <label for="opcao_estrategia4_9">9</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia4_10" name="estrategia4" value="10" required> <label for="opcao_estrategia4_10">10</label>
+                             </div>
+                             <div class="text-end mt-3">
+                                 <button type="button" class="btn btn-primary" data-question="5" id="next5">Próxima</button>
+                             </div>
+                        </div>
+
+                       <!--  Questão 5 ---------------------------------------------------------------->
+                         <div class="mx-0 mx-sm-auto tab-pane fade" id="step6">
+                            <!-- Conteúdo da Pergunta 5 -->
+                             <!-- ... (código da pergunta 5) ... -->
+                             <p>
+                                 <strong class="text-dark">Questão 5: Na sua opinião a transformação digital para a <span data-bs-toggle="tooltip" data-bs-placement="top" title="O termo 'Indústria 4.0' refere-se à quarta revolução industrial, caracterizada pela integração de tecnologias avançadas, tais como Internet das Coisas (IoT), inteligência artificial, big data, computação em nuvem e automação. Esta revolução tem o potencial de proporcionar maior eficiência na tomada de decisões baseada em dados, melhorias na qualidade dos serviços e uma abordagem mais sustentável e inovadora."><strong style="color: blue;">Indústria 4.0</strong></span> poderia melhorar a competitividade do Campus Universitário do Araguaia – UFMT no cenário local, nacional e internacional?</strong>
+                                <small class="d-block">Marque 0 para insatisfatório e 10 para satisfatório</small>
+                             </p>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia5_0" name="estrategia5" value="0" required> <label for="opcao_estrategia5_0">0</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia5_1" name="estrategia5" value="1" required> <label for="opcao_estrategia5_1">1</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia5_2" name="estrategia5" value="2" required> <label for="opcao_estrategia5_2">2</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia5_3" name="estrategia5" value="3" required> <label for="opcao_estrategia5_3">3</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia5_4" name="estrategia5" value="4" required> <label for="opcao_estrategia5_4">4</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia5_5" name="estrategia5" value="5" required> <label for="opcao_estrategia5_5">5</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia5_6" name="estrategia5" value="6" required> <label for="opcao_estrategia5_6">6</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia5_7" name="estrategia5" value="7" required> <label for="opcao_estrategia5_7">7</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia5_8" name="estrategia5" value="8" required> <label for="opcao_estrategia5_8">8</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia5_9" name="estrategia5" value="9" required> <label for="opcao_estrategia5_9">9</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia5_10" name="estrategia5" value="10" required> <label for="opcao_estrategia5_10">10</label>
+                             </div>
+                             <div class="text-end">
+                                 <button type="button" class="btn btn-primary" data-question="6" id="next6">Próxima</button>
+                             </div>
+                             <small class="d-block">Obs:Passe o mouse ou clique nos termos destacados em azul para saber seu significado</small>
+                         </div>
+
+                         <!--  Questão 6 ----------------------------------------------------------------------->
+                         <div class="mx-0 mx-sm-auto tab-pane fade" id="step7">
+                             <!-- Conteúdo da Pergunta 6 -->
+                             <!-- ... (código da pergunta 6) ... -->
+                             <p>
+                                 <strong class="text-dark">Questão 6: O Campus Universitário do Araguaia – UFMT possui <span data-bs-toggle="tooltip" data-bs-placement="top" title="é o processo de inspecionar e modelar conjuntos de dados com o objetivo de descobrir informações úteis, sugerir conclusões e apoiar a tomada de decisão.">uma estratégia para formação de equipes de especialistas e infraestruturas dedicadas para acesso e <strong style="color: blue;">análise de dados</strong></span>?</strong>
+                                <small class="d-block">Marque 0 para insatisfatório e 10 para satisfatório</small>
+                             </p>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia6_0" name="estrategia6" value="0" required> <label for="opcao_estrategia6_0">0</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia6_1" name="estrategia6" value="1" required> <label for="opcao_estrategia6_1">1</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia6_2" name="estrategia6" value="2" required> <label for="opcao_estrategia6_2">2</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia6_3" name="estrategia6" value="3" required> <label for="opcao_estrategia6_3">3</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia6_4" name="estrategia6" value="4" required> <label for="opcao_estrategia6_4">4</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia6_5" name="estrategia6" value="5" required> <label for="opcao_estrategia6_5">5</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia6_6" name="estrategia6" value="6" required> <label for="opcao_estrategia6_6">6</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia6_7" name="estrategia6" value="7" required> <label for="opcao_estrategia6_7">7</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia6_8" name="estrategia6" value="8" required> <label for="opcao_estrategia6_8">8</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia6_9" name="estrategia6" value="9" required> <label for="opcao_estrategia6_9">9</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_estrategia6_10" name="estrategia6" value="10" required> <label for="opcao_estrategia6_10">10</label>
+                             </div>
+                             <div class="text-end">
+                                 <button type="button" class="btn btn-primary" data-question="7" id="next7">Próxima</button>
+                             </div>
+                             <small class="d-block">Obs:Passe o mouse ou clique nos termos destacados em azul para saber seu significado</small>
+                         </div>
+
+                         <!--  Questão 7 ----------------------------------------------------------------->
+                         <div class="mx-0 mx-sm-auto tab-pane fade" id="step8">
+                             <!-- Conteúdo da Pergunta 7 -->
+                             <!-- ... (código da pergunta 7) ... -->
+                             <p>
+                               <strong class="text-dark">Questão 7: Na sua opinião, os processos estão sendo implementados gradativamente para coletar e analisar dados relevantes para a gestão acadêmica e administrativa no campus do Araguaia - UFMT?</strong>
+                                <small class="d-block">Marque 0 para insatisfatório e 10 para satisfatório</small>
+                             </p>
+                              <div class="form-check form-check-inline">
+                               <input type="radio" id="opcao_processo1_0" name="processo1" value="0" required> <label for="opcao_processo1_0">0</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                               <input type="radio" id="opcao_processo1_1" name="processo1" value="1" required> <label for="opcao_processo1_1">1</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                               <input type="radio" id="opcao_processo1_2" name="processo1" value="2" required> <label for="opcao_processo1_2">2</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                               <input type="radio" id="opcao_processo1_3" name="processo1" value="3" required> <label for="opcao_processo1_3">3</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                               <input type="radio" id="opcao_processo1_4" name="processo1" value="4" required> <label for="opcao_processo1_4">4</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input type="radio" id="opcao_processo1_5" name="processo1" value="5" required> <label for="opcao_processo1_5">5</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                               <input type="radio" id="opcao_processo1_6" name="processo1" value="6" required> <label for="opcao_processo1_6">6</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                               <input type="radio" id="opcao_processo1_7" name="processo1" value="7" required> <label for="opcao_processo1_7">7</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                               <input type="radio" id="opcao_processo1_8" name="processo1" value="8" required> <label for="opcao_processo1_8">8</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                               <input type="radio" id="opcao_processo1_9" name="processo1" value="9" required> <label for="opcao_processo1_9">9</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                               <input type="radio" id="opcao_processo1_10" name="processo1" value="10" required> <label for="opcao_processo1_10">10</label>
+                              </div>
+                             <div class="text-end">
+                                 <button type="button" class="btn btn-primary" data-question="8" id="next8">Próxima</button>
+                             </div>
+                         </div>
+                         <!--  Questão 8 ----------------------------------------------------------------->
+                         <div class="mx-0 mx-sm-auto tab-pane fade" id="step9">
+                             <!-- Conteúdo da Pergunta 8 -->
+                              <p>
+                                 <strong class="text-dark">Questão 8: No Campus Universitário do Araguaia – UFMT existem processos automatizados que visam identificar e solucionar problemas acadêmicos, como a evasão de alunos?</strong>
+                                <small class="d-block">Marque 0 para insatisfatório e 10 para satisfatório</small>
+                                </p>
+                                <div class="form-check form-check-inline">
+                                  <input type="radio" id="opcao_processo2_0" name="processo2" value="0" required> <label for="opcao_processo2_0">0</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                 <input type="radio" id="opcao_processo2_1" name="processo2" value="1" required> <label for="opcao_processo2_1">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input type="radio" id="opcao_processo2_2" name="processo2" value="2" required> <label for="opcao_processo2_2">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                   <input type="radio" id="opcao_processo2_3" name="processo2" value="3" required> <label for="opcao_processo2_3">3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input type="radio" id="opcao_processo2_4" name="processo2" value="4" required> <label for="opcao_processo2_4">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input type="radio" id="opcao_processo2_5" name="processo2" value="5" required> <label for="opcao_processo2_5">5</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                     <input type="radio" id="opcao_processo2_6" name="processo2" value="6" required> <label for="opcao_processo2_6">6</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                   <input type="radio" id="opcao_processo2_7" name="processo2" value="7" required> <label for="opcao_processo2_7">7</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo2_8" name="processo2" value="8" required> <label for="opcao_processo2_8">8</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo2_9" name="processo2" value="9" required> <label for="opcao_processo2_9">9</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo2_10" name="processo2" value="10" required> <label for="opcao_processo2_10">10</label>
+                                </div>
+
+                             <div class="text-end">
+                                 <button type="button" class="btn btn-primary" data-question="9" id="next9">Próxima</button>
+                             </div>
+                         </div>
+
+                         <!--  Questão 9 ----------------------------------------------------------------->
+                         <div class="mx-0 mx-sm-auto tab-pane fade" id="step10">
+                             <!-- Conteúdo da Pergunta 9 -->
+                             <!-- ... (código da pergunta 9) ... -->
+                                 <p>
+                                    <strong class="text-dark">Questão 9: No campus do Araguaia -UFMT, em qual nível os processos estão sendo implementados para permitir a personalização da experiência dos alunos pós-matricula?</strong>
+                                    <small class="d-block">Marque 0 para insatisfatório e 10 para satisfatório</small>
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo3_0" name="processo3" value="0" required> <label for="opcao_processo3_0">0</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo3_1" name="processo3" value="1" required> <label for="opcao_processo3_1">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo3_2" name="processo3" value="2" required> <label for="opcao_processo3_2">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo3_3" name="processo3" value="3" required> <label for="opcao_processo3_3">3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo3_4" name="processo3" value="4" required> <label for="opcao_processo3_4">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo3_5" name="processo3" value="5" required> <label for="opcao_processo3_5">5</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo3_6" name="processo3" value="6" required> <label for="opcao_processo3_6">6</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo3_7" name="processo3" value="7" required> <label for="opcao_processo3_7">7</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo3_8" name="processo3" value="8" required> <label for="opcao_processo3_8">8</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo3_9" name="processo3" value="9" required> <label for="opcao_processo3_9">9</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo3_10" name="processo3" value="10" required> <label for="opcao_processo3_10">10</label>
+                                </div>
+                             <div class="text-end">
+                                 <button type="button" class="btn btn-primary" data-question="10" id="next10">Próxima</button>
+                             </div>
+                         </div>
+
+                         <!--  Questão 10 ----------------------------------------------------------------->
+                         <div class="mx-0 mx-sm-auto tab-pane fade" id="step11">
+                             <!-- Conteúdo da Pergunta 10 -->
+                             <!-- ... (código da pergunta 10) ... -->
+                                <p>
+                                    <strong class="text-dark">Questão 10: Na sua opinião os principais processos acadêmicos são projetados para facilitar o compartilhamento ágil de informações dentro do Campus Universitário do Araguaia – UFMT e com outras instituições de ensino e pesquisa?</strong>
+                                    <small class="d-block">Marque 0 para insatisfatório e 10 para satisfatório</small>
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo4_0" name="processo4" value="0" required> <label for="opcao_processo4_0">0</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo4_1" name="processo4" value="1" required> <label for="opcao_processo4_1">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo4_2" name="processo4" value="2" required> <label for="opcao_processo4_2">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo4_3" name="processo4" value="3" required> <label for="opcao_processo4_3">3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo4_4" name="processo4" value="4" required> <label for="opcao_processo4_4">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo4_5" name="processo4" value="5" required> <label for="opcao_processo4_5">5</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo4_6" name="processo4" value="6" required> <label for="opcao_processo4_6">6</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo4_7" name="processo4" value="7" required> <label for="opcao_processo4_7">7</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo4_8" name="processo4" value="8" required> <label for="opcao_processo4_8">8</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo4_9" name="processo4" value="9" required> <label for="opcao_processo4_9">9</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo4_10" name="processo4" value="10" required> <label for="opcao_processo4_10">10</label>
+                                </div>
+
+                             <div class="text-end">
+                                 <button type="button" class="btn btn-primary" data-question="11" id="next11">Próxima</button>
+                             </div>
+                         </div>
+
+                         <!--  Questão 11 ----------------------------------------------------------------->
+                         <div class="mx-0 mx-sm-auto tab-pane fade" id="step12">
+                             <!-- Conteúdo da Pergunta 11 -->
+                             <!-- ... (código da pergunta 11) ... -->
+                             <p>
+                                <strong class="text-dark">Questão 11: O Campus Universitário do Araguaia – UFMT utiliza recursos de computação visual, como sistemas de supervisão, <span data-bs-toggle="tooltip" data-bs-placement="top" title="Realidade Virtual: Ambiente de computação gerado eletronicamente, que simula a presença física do usuário em um ambiente virtual. Exemplo: Oculus Quest (da META)"><strong style="color: blue;">realidade virtual</strong></span> e <span data-bs-toggle="tooltip" data-bs-placement="top" title="Realidade Aumentada: Integração de elementos virtuais no ambiente físico do usuário em tempo real. Exemplo: Google glass e Pokemon Go"><strong style="color: blue;">realidade aumentada</strong></span>, para apoiar as operações acadêmicas?</strong>
+                                <small class="d-block">Marque 0 para insatisfatório e 10 para satisfatório</small>
+                            </p>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="opcao_processo5_0" name="processo5" value="0" required> <label for="opcao_processo5_0">0</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="opcao_processo5_1" name="processo5" value="1" required> <label for="opcao_processo5_1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="opcao_processo5_2" name="processo5" value="2" required> <label for="opcao_processo5_2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="opcao_processo5_3" name="processo5" value="3" required> <label for="opcao_processo5_3">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="opcao_processo5_4" name="processo5" value="4" required> <label for="opcao_processo5_4">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="opcao_processo5_5" name="processo5" value="5" required> <label for="opcao_processo5_5">5</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="opcao_processo5_6" name="processo5" value="6" required> <label for="opcao_processo5_6">6</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="opcao_processo5_7" name="processo5" value="7" required> <label for="opcao_processo5_7">7</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="opcao_processo5_8" name="processo5" value="8" required> <label for="opcao_processo5_8">8</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="opcao_processo5_9" name="processo5" value="9" required> <label for="opcao_processo5_9">9</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="opcao_processo5_10" name="processo5" value="10" required> <label for="opcao_processo5_10">10</label>
+                            </div>
+
+                             <div class="text-end">
+                                 <button type="button" class="btn btn-primary" data-question="12" id="next12">Próxima</button>
+                             </div>
+                             <small class="d-block">Obs:Passe o mouse ou clique nos termos destacados em azul para saber seu significado</small>
+                         </div>
+
+                         <!--  Questão 12----------------------------------------------------------------->
+                         <div class="mx-0 mx-sm-auto tab-pane fade" id="step13">
+                             <!-- Conteúdo da Pergunta 12 -->
+                             <!-- ... (código da pergunta 12) ... -->
+                                  <p>
+                                    <strong class="text-dark">Questão 12: No campus do Araguaia - UFMT, os processos acadêmicos são capazes de operar de forma autônoma, auxiliados por sistemas de <span data-bs-toggle="tooltip" data-bs-placement="top" title="Aprendizado de Máquina: Subsetor da inteligência artificial que envolve o desenvolvimento de algoritmos que permitem aos sistemas aprenderem padrões ou tomar decisões com base em dados. Exemplo: Análise de padrões para otimizar a rota e determinar preços de corridas do Uber."><strong style="color: blue;">aprendizado de máquina</strong></span>?</strong>
+                                   <small class="d-block">Marque 0 para insatisfatório e 10 para satisfatório</small>
+                                  </p>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo6_0" name="processo6" value="0" required> <label for="opcao_processo6_0">0</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo6_1" name="processo6" value="1" required> <label for="opcao_processo6_1">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo6_2" name="processo6" value="2" required> <label for="opcao_processo6_2">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo6_3" name="processo6" value="3" required> <label for="opcao_processo6_3">3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo6_4" name="processo6" value="4" required> <label for="opcao_processo6_4">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo6_5" name="processo6" value="5" required> <label for="opcao_processo6_5">5</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo6_6" name="processo6" value="6" required> <label for="opcao_processo6_6">6</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo6_7" name="processo6" value="7" required> <label for="opcao_processo6_7">7</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo6_8" name="processo6" value="8" required> <label for="opcao_processo6_8">8</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo6_9" name="processo6" value="9" required> <label for="opcao_processo6_9">9</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_processo6_10" name="processo6" value="10" required> <label for="opcao_processo6_10">10</label>
+                                </div>
+
+                             <div class="text-end">
+                                 <button type="button" class="btn btn-primary" data-question="13" id="next13">Próxima</button>
+                             </div>
+                             <small class="d-block">Obs:Passe o mouse ou clique nos termos destacados em azul para saber seu significado</small>
+                         </div>
+
+                            <!--  Questão 13 ----------------------------------------------------------------->
+                         <div class="mx-0 mx-sm-auto tab-pane fade" id="step14">
+                             <!-- Conteúdo da Pergunta 13 -->
+                             <!-- ... (código da pergunta 13) ... -->
+                             <p>
+                               <strong class="text-dark">Questão 13: Como você avaliaria a infraestrutura de Tecnologia da Informação do Campus Universitário do Araguaia – UFMT em termos de funcionalidades como controle de máquinas/sistemas por meio da tecnologia, comunicação máquina a máquina e <span data-bs-toggle="tooltip" data-bs-placement="top" title="Interoperabilidade entre Sistemas: Capacidade de diferentes sistemas e dispositivos se conectarem, interagirem e trocarem dados de maneira eficiente. Exemplo: Acesso ao Portal de Sistemas da UFMT através do Gov.br"><strong style="color: blue;">interoperabilidade entre sistemas</strong></span>?</strong>
+                                <small class="d-block">Marque 0 para insatisfatório e 10 para satisfatório</small>
+                            </p>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="opcao_infra1_0" name="infra1" value="0" required> <label for="opcao_infra1_0">0</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="opcao_infra1_1" name="infra1" value="1" required> <label for="opcao_infra1_1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="opcao_infra1_2" name="infra1" value="2" required> <label for="opcao_infra1_2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="opcao_infra1_3" name="infra1" value="3" required> <label for="opcao_infra1_3">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="opcao_infra1_4" name="infra1" value="4" required> <label for="opcao_infra1_4">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="opcao_infra1_5" name="infra1" value="5" required> <label for="opcao_infra1_5">5</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="opcao_infra1_6" name="infra1" value="6" required> <label for="opcao_infra1_6">6</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="opcao_infra1_7" name="infra1" value="7" required> <label for="opcao_infra1_7">7</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="opcao_infra1_8" name="infra1" value="8" required> <label for="opcao_infra1_8">8</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="opcao_infra1_9" name="infra1" value="9" required> <label for="opcao_infra1_9">9</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="opcao_infra1_10" name="infra1" value="10" required> <label for="opcao_infra1_10">10</label>
+                            </div>
+
+                             <div class="text-end">
+                                 <button type="button" class="btn btn-primary" data-question="14" id="next14">Próxima</button>
+                             </div>
+                             <small class="d-block">Obs:Passe o mouse ou clique nos termos destacados em azul para saber seu significado</small>
+                         </div>
+
+                         <!--  Questão 14 ----------------------------------------------------------------->
+                         <div class="mx-0 mx-sm-auto tab-pane fade" id="step15">
+                             <!-- Conteúdo da Pergunta 14 -->
+                             <!-- ... (código da pergunta 14) ... -->
+                                <p>
+                                    <strong class="text-dark">Questão 14: O Campus Universitário do Araguaia – UFMT possui infraestrutura de TI apta a oferecer serviços na <span data-bs-toggle="tooltip" data-bs-placement="top" title="Uma metáfora para serviços de computação em nuvem, que são serviços fornecidos pela internet. Exemplo: OneDrive"><strong style="color: blue;">nuvem</strong></span> que auxiliam ao ensino, pesquisa, extensão e gestão?</strong>
+                                    <small class="d-block">Marque 0 para insatisfatório e 10 para satisfatório</small>
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra2_0" name="infra2" value="0" required> <label for="opcao_infra2_0">0</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra2_1" name="infra2" value="1" required> <label for="opcao_infra2_1">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra2_2" name="infra2" value="2" required> <label for="opcao_infra2_2">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra2_3" name="infra2" value="3" required> <label for="opcao_infra2_3">3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra2_4" name="infra2" value="4" required> <label for="opcao_infra2_4">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra2_5" name="infra2" value="5" required> <label for="opcao_infra2_5">5</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra2_6" name="infra2" value="6" required> <label for="opcao_infra2_6">6</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra2_7" name="infra2" value="7" required> <label for="opcao_infra2_7">7</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra2_8" name="infra2" value="8" required> <label for="opcao_infra2_8">8</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra2_9" name="infra2" value="9" required> <label for="opcao_infra2_9">9</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra2_10" name="infra2" value="10" required> <label for="opcao_infra2_10">10</label>
+                                </div>
+
+                             <div class="text-end">
+                                 <button type="button" class="btn btn-primary" data-question="15" id="next15">Próxima</button>
+                             </div>
+                              <small class="d-block">Obs:Passe o mouse ou clique nos termos destacados em azul para saber seu significado</small>
+                         </div>
+
+                         <!--  Questão 15 ----------------------------------------------------------------->
+                         <div class="mx-0 mx-sm-auto tab-pane fade" id="step16">
+                             <!-- Conteúdo da Pergunta 15 -->
+                             <!-- ... (código da pergunta 15) ... -->
+                                <p>
+                                    <strong class="text-dark">Questão 15: O Campus Universitário do Araguaia – UFMT utiliza dispositivos como <span data-bs-toggle="tooltip" data-bs-placement="top" title="Dispositivos que constroem objetos tridimensionais camada por camada a partir de modelos digitais."><strong style="color: blue;">impressoras 3D</strong></span> como parte de sua infraestrutura de ensino e pesquisa?</strong>
+                                    <small class="d-block">Marque 0 para insatisfatório e 10 para satisfatório</small>
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra3_0" name="infra3" value="0" required> <label for="opcao_infra3_0">0</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra3_1" name="infra3" value="1" required> <label for="opcao_infra3_1">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra3_2" name="infra3" value="2" required> <label for="opcao_infra3_2">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra3_3" name="infra3" value="3" required> <label for="opcao_infra3_3">3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra3_4" name="infra3" value="4" required> <label for="opcao_infra3_4">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra3_5" name="infra3" value="5" required> <label for="opcao_infra3_5">5</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra3_6" name="infra3" value="6" required> <label for="opcao_infra3_6">6</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra3_7" name="infra3" value="7" required> <label for="opcao_infra3_7">7</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra3_8" name="infra3" value="8" required> <label for="opcao_infra3_8">8</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra3_9" name="infra3" value="9" required> <label for="opcao_infra3_9">9</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra3_10" name="infra3" value="10" required> <label for="opcao_infra3_10">10</label>
+                                </div>
+
+                             <div class="text-end">
+                                 <button type="button" class="btn btn-primary" data-question="16" id="next16">Próxima</button>
+                             </div>
+                             <small class="d-block">Obs:Passe o mouse ou clique nos termos destacados em azul para saber seu significado</small>
+                         </div>
+
+                         <!--  Questão 16 ----------------------------------------------------------------->
+                         <div class="mx-0 mx-sm-auto tab-pane fade" id="step17">
+                             <!-- Conteúdo da Pergunta 16 -->
+                             <!-- ... (código da pergunta 16) ... -->
+                                <p>
+                                    <strong class="text-dark">Questão 16: Até que ponto o Campus Universitário do Araguaia – UFMT planejou, está implementando ou já implementou soluções de segurança de TI em áreas como armazenamento interno de dados, serviços em nuvem e comunicações internas e externas?</strong>
+                                    <small class="d-block">Marque 0 para insatisfatório e 10 para satisfatório</small>
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra4_0" name="infra4" value="0" required> <label for="opcao_infra4_0">0</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra4_1" name="infra4" value="1" required> <label for="opcao_infra4_1">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra4_2" name="infra4" value="2" required> <label for="opcao_infra4_2">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra4_3" name="infra4" value="3" required> <label for="opcao_infra4_3">3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra4_4" name="infra4" value="4" required> <label for="opcao_infra4_4">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra4_5" name="infra4" value="5" required> <label for="opcao_infra4_5">5</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra4_6" name="infra4" value="6" required> <label for="opcao_infra4_6">6</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra4_7" name="infra4" value="7" required> <label for="opcao_infra4_7">7</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra4_8" name="infra4" value="8" required> <label for="opcao_infra4_8">8</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra4_9" name="infra4" value="9" required> <label for="opcao_infra4_9">9</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra4_10" name="infra4" value="10" required> <label for="opcao_infra4_10">10</label>
+                                </div>
+
+                             <div class="text-end">
+                                 <button type="button" class="btn btn-primary" data-question="17" id="next17">Próxima</button>
+                             </div>
+                         </div>
+
+                         <!--  Questão 17 ----------------------------------------------------------------->
+                         <div class="mx-0 mx-sm-auto tab-pane fade" id="step18">
+                             <!-- Conteúdo da Pergunta 17 -->
+                             <!-- ... (código da pergunta 17) ... -->
+                                <p>
+                                   <strong class="text-dark">Questão 17: Na sua opinião, as instalações acadêmicas do campus do Araguaia - UFMT possuem sistemas embarcados (<span data-bs-toggle="tooltip" data-bs-placement="top" title="IoT: Internet das Coisas. Sistemas embarcados interconectados que coletam e compartilham dados para realizar ações inteligentes. Exemplo: Smartwatches"><strong style="color: blue;">IoT</strong></span>) que permitem a coleta de dados, processamento e comunicação entre si e com outros sistemas acadêmicos?</strong>
+                                    <small class="d-block">Marque 0 para insatisfatório e 10 para satisfatório</small>
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra5_0" name="infra5" value="0" required> <label for="opcao_infra5_0">0</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra5_1" name="infra5" value="1" required> <label for="opcao_infra5_1">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra5_2" name="infra5" value="2" required> <label for="opcao_infra5_2">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra5_3" name="infra5" value="3" required> <label for="opcao_infra5_3">3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra5_4" name="infra5" value="4" required> <label for="opcao_infra5_4">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra5_5" name="infra5" value="5" required> <label for="opcao_infra5_5">5</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra5_6" name="infra5" value="6" required> <label for="opcao_infra5_6">6</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra5_7" name="infra5" value="7" required> <label for="opcao_infra5_7">7</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra5_8" name="infra5" value="8" required> <label for="opcao_infra5_8">8</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra5_9" name="infra5" value="9" required> <label for="opcao_infra5_9">9</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra5_10" name="infra5" value="10" required> <label for="opcao_infra5_10">10</label>
+                                </div>
+
+                             <div class="text-end">
+                                 <button type="button" class="btn btn-primary" data-question="18" id="next18">Próxima</button>
+                             </div>
+                             <small class="d-block">Obs:Passe o mouse ou clique nos termos destacados em azul para saber seu significado</small>
+                         </div>
+
+                         <!--  Questão 18----------------------------------------------------------------->
+                         <div class="mx-0 mx-sm-auto tab-pane fade" id="step19">
+                             <!-- Conteúdo da Pergunta 18 -->
+                             <!-- ... (código da pergunta 18) ... -->
+                                <p>
+                                    <strong class="text-dark">Questão 18: No Campus Universitário do Araguaia – UFMT, as instalações acadêmicas estão equipadas com tecnologias de <span data-bs-toggle="tooltip" data-bs-placement="top" title="Capacidade de máquinas e sistemas aprenderem e realizar tarefas que normalmente requerem inteligência humana. Exemplo: Córtex, Alexa (Amazon), ChatGPT"><strong style="color: blue;">inteligência artificial</strong></span> que possibilitam a melhoria contínua e a tomada de decisões autônomas?</strong>
+                                    <small class="d-block">Marque 0 para insatisfatório e 10 para satisfatório</small>
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra6_0" name="infra6" value="0" required> <label for="opcao_infra6_0">0</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra6_1" name="infra6" value="1" required> <label for="opcao_infra6_1">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra6_2" name="infra6" value="2" required> <label for="opcao_infra6_2">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra6_3" name="infra6" value="3" required> <label for="opcao_infra6_3">3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra6_4" name="infra6" value="4" required> <label for="opcao_infra6_4">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra6_5" name="infra6" value="5" required> <label for="opcao_infra6_5">5</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra6_6" name="infra6" value="6" required> <label for="opcao_infra6_6">6</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra6_7" name="infra6" value="7" required> <label for="opcao_infra6_7">7</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra6_8" name="infra6" value="8" required> <label for="opcao_infra6_8">8</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra6_9" name="infra6" value="9" required> <label for="opcao_infra6_9">9</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_infra6_10" name="infra6" value="10" required> <label for="opcao_infra6_10">10</label>
+                                </div>
+
+                             <div class="text-end">
+                                 <button type="button" class="btn btn-primary" data-question="19" id="next19">Próxima</button>
+                             </div>
+                             <small class="d-block">Obs:Passe o mouse ou clique nos termos destacados em azul para saber seu significado</small>
+                         </div>
+
+                            <!--  Questão 19 ----------------------------------------------------------------->
+                         <div class="mx-0 mx-sm-auto tab-pane fade" id="step20">
+                             <!-- Conteúdo da Pergunta 19 -->
+                             <!-- ... (código da pergunta 19) ... -->
+                                <p>
+                                    <strong class="text-dark">Questão 19: Em que nível você percebe que os processos acadêmicos e administrativos no campus do Araguaia - UFMT estão automatizados por meio de tecnologias para transformação digital ?</strong>
+                                  <small class="d-block">Marque 0 para insatisfatório e 10 para satisfatório</small>
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec1_0" name="tec1" value="0" required> <label for="opcao_tec1_0">0</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec1_1" name="tec1" value="1" required> <label for="opcao_tec1_1">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec1_2" name="tec1" value="2" required> <label for="opcao_tec1_2">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec1_3" name="tec1" value="3" required> <label for="opcao_tec1_3">3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec1_4" name="tec1" value="4" required> <label for="opcao_tec1_4">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec1_5" name="tec1" value="5" required> <label for="opcao_tec1_5">5</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec1_6" name="tec1" value="6" required> <label for="opcao_tec1_6">6</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec1_7" name="tec1" value="7" required> <label for="opcao_tec1_7">7</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec1_8" name="tec1" value="8" required> <label for="opcao_tec1_8">8</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec1_9" name="tec1" value="9" required> <label for="opcao_tec1_9">9</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec1_10" name="tec1" value="10" required> <label for="opcao_tec1_10">10</label>
+                                </div>
+
+                             <div class="text-end">
+                                 <button type="button" class="btn btn-primary" data-question="20" id="next20">Próxima</button>
+                             </div>
+                         </div>
+
+                         <!--  Questão 20 ----------------------------------------------------------------->
+                         <div class="mx-0 mx-sm-auto tab-pane fade" id="step21">
+                             <!-- Conteúdo da Pergunta 20 -->
+                             <!-- ... (código da pergunta 20) ... -->
+                                <p>
+                                   <strong class="text-dark">Questão 20: Na sua opinião, o Campus Universitário do Araguaia – UFMT emprega alguma tecnologia oriunda da <span data-bs-toggle="tooltip" data-bs-placement="top" title="O termo 'Indústria 4.0' refere-se à quarta revolução industrial, caracterizada pela integração de tecnologias avançadas, tais como Internet das Coisas (IoT), inteligência artificial, big data, computação em nuvem e automação. Esta revolução tem o potencial de proporcionar maior eficiência na tomada de decisões baseada em dados, melhorias na qualidade dos serviços e uma abordagem mais sustentável e inovadora."><strong style="color: blue;">Indústria 4.0</strong></span>, como <span data-bs-toggle="tooltip" data-bs-placement="top" title="Capacidade de máquinas e sistemas aprenderem e realizar tarefas que normalmente requerem inteligência humana. Exemplo: Google Assistente."><strong style="color: blue;">inteligência artificial</strong></span>, <span data-bs-toggle="tooltip" data-bs-placement="top" title="Serviços e recursos disponibilizados pela internet, permitindo armazenamento, processamento de dados e acesso remoto. Exemplo: Google Drive e One Drive"><strong style="color: blue;">nuvem</strong></span>, <span data-bs-toggle="tooltip" data-bs-placement="top" title="Práticas e tecnologias para proteger sistemas, redes e programas contra ataques, danos ou acesso não autorizado. Exemplo: Antivirus, Firewall e VPN"><strong style="color: blue;">cibersegurança</strong></span> e outras, para auxiliar nas operações administrativas e acadêmicas?</strong>
+                                   <small class="d-block">Marque 0 para insatisfatório e 10 para satisfatório</small>
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec2_0" name="tec2" value="0" required> <label for="opcao_tec2_0">0</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec2_1" name="tec2" value="1" required> <label for="opcao_tec2_1">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec2_2" name="tec2" value="2" required> <label for="opcao_tec2_2">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec2_3" name="tec2" value="3" required> <label for="opcao_tec2_3">3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec2_4" name="tec2" value="4" required> <label for="opcao_tec2_4">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec2_5" name="tec2" value="5" required> <label for="opcao_tec2_5">5</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec2_6" name="tec2" value="6" required> <label for="opcao_tec2_6">6</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec2_7" name="tec2" value="7" required> <label for="opcao_tec2_7">7</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec2_8" name="tec2" value="8" required> <label for="opcao_tec2_8">8</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec2_9" name="tec2" value="9" required> <label for="opcao_tec2_9">9</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec2_10" name="tec2" value="10" required> <label for="opcao_tec2_10">10</label>
+                                </div>
+
+                             <div class="text-end">
+                                 <button type="button" class="btn btn-primary" data-question="21" id="next21">Próxima</button>
+                             </div>
+                             <small class="d-block">Obs:Passe o mouse ou clique nos termos destacados em azul para saber seu significado</small>
+                         </div>
+
+                         <!--  Questão 21 ----------------------------------------------------------------->
+                         <div class="mx-0 mx-sm-auto tab-pane fade" id="step22">
+                             <!-- Conteúdo da Pergunta 21 -->
+                             <!-- ... (código da pergunta 21) ... -->
+                                <p>
+                                    <strong class="text-dark">Questão 21: No Campus Universitário do Araguaia – UFMT são adotadas tecnologias e procedimentos para garantir a segurança de recursos humanos e físicos, bem como a proteção de dados acadêmicos contra acesso não autorizado?</strong>
+                                    <small class="d-block">Marque 0 para insatisfatório e 10 para satisfatório</small>
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec3_0" name="tec3" value="0" required> <label for="opcao_tec3_0">0</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec3_1" name="tec3" value="1" required> <label for="opcao_tec3_1">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec3_2" name="tec3" value="2" required> <label for="opcao_tec3_2">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec3_3" name="tec3" value="3" required> <label for="opcao_tec3_3">3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec3_4" name="tec3" value="4" required> <label for="opcao_tec3_4">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec3_5" name="tec3" value="5" required> <label for="opcao_tec3_5">5</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec3_6" name="tec3" value="6" required> <label for="opcao_tec3_6">6</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec3_7" name="tec3" value="7" required> <label for="opcao_tec3_7">7</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec3_8" name="tec3" value="8" required> <label for="opcao_tec3_8">8</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec3_9" name="tec3" value="9" required> <label for="opcao_tec3_9">9</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec3_10" name="tec3" value="10" required> <label for="opcao_tec3_10">10</label>
+                                </div>
+
+                             <div class="text-end">
+                                 <button type="button" class="btn btn-primary" data-question="22" id="next22">Próxima</button>
+                             </div>
+                         </div>
+
+                         <!--  Questão 22 ----------------------------------------------------------------->
+                         <div class="mx-0 mx-sm-auto tab-pane fade" id="step23">
+                             <!-- Conteúdo da Pergunta 22 -->
+                             <!-- ... (código da pergunta 22) ... -->
+                                <p>
+                                    <strong class="text-dark">Questão 22: O Campus Universitário do Araguaia – UFMT oferece oportunidades de capacitação para adquirir habilidades técnicas e gerenciais relacionadas aos conceitos e tecnologias da <span data-bs-toggle="tooltip" data-bs-placement="top" title="O termo 'Indústria 4.0' refere-se à quarta revolução industrial, caracterizada pela integração de tecnologias avançadas, tais como Internet das Coisas (IoT), inteligência artificial, big data, computação em nuvem e automação. Esta revolução tem o potencial de proporcionar maior eficiência na tomada de decisões baseada em dados, melhorias na qualidade dos serviços e uma abordagem mais sustentável e inovadora."><strong style="color: blue;">Indústria 4.0</strong></span>?</strong>
+                                    <small class="d-block">Marque 0 para insatisfatório e 10 para satisfatório</small>
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec4_0" name="tec4" value="0" required> <label for="opcao_tec4_0">0</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec4_1" name="tec4" value="1" required> <label for="opcao_tec4_1">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec4_2" name="tec4" value="2" required> <label for="opcao_tec4_2">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec4_3" name="tec4" value="3" required> <label for="opcao_tec4_3">3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec4_4" name="tec4" value="4" required> <label for="opcao_tec4_4">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec4_5" name="tec4" value="5" required> <label for="opcao_tec4_5">5</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec4_6" name="tec4" value="6" required> <label for="opcao_tec4_6">6</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec4_7" name="tec4" value="7" required> <label for="opcao_tec4_7">7</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec4_8" name="tec4" value="8" required> <label for="opcao_tec4_8">8</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec4_9" name="tec4" value="9" required> <label for="opcao_tec4_9">9</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec4_10" name="tec4" value="10" required> <label for="opcao_tec4_10">10</label>
+                                </div>
+
+                             <div class="text-end">
+                                 <button type="button" class="btn btn-primary" data-question="23" id="next23">Próxima</button>
+                             </div>
+                             <small class="d-block">Obs:Passe o mouse ou clique nos termos destacados em azul para saber seu significado</small>
+                         </div>
+
+                         <!--  Questão 23 ----------------------------------------------------------------->
+                         <div class="mx-0 mx-sm-auto tab-pane fade" id="step24">
+                             <!-- Conteúdo da Pergunta 23 -->
+                             <!-- ... (código da pergunta 23) ... -->
+                                <p>
+                                    <strong class="text-dark">Questão 23: O campus do Araguaia - UFMT utiliza tecnologia de análises de dados para melhorar a satisfação dos alunos e da comunidade acadêmica?</strong>
+                                    <small class="d-block">Marque 0 para insatisfatório e 10 para satisfatório</small>
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec5_0" name="tec5" value="0" required> <label for="opcao_tec5_0">0</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec5_1" name="tec5" value="1" required> <label for="opcao_tec5_1">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec5_2" name="tec5" value="2" required> <label for="opcao_tec5_2">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec5_3" name="tec5" value="3" required> <label for="opcao_tec5_3">3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec5_4" name="tec5" value="4" required> <label for="opcao_tec5_4">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec5_5" name="tec5" value="5" required> <label for="opcao_tec5_5">5</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec5_6" name="tec5" value="6" required> <label for="opcao_tec5_6">6</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec5_7" name="tec5" value="7" required> <label for="opcao_tec5_7">7</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec5_8" name="tec5" value="8" required> <label for="opcao_tec5_8">8</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec5_9" name="tec5" value="9" required> <label for="opcao_tec5_9">9</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec5_10" name="tec5" value="10" required> <label for="opcao_tec5_10">10</label>
+                                </div>
+
+                             <div class="text-end">
+                                 <button type="button" class="btn btn-primary" data-question="24" id="next24">Próxima</button>
+                             </div>
+                         </div>
+
+                         <!--  Questão 24----------------------------------------------------------------->
+                         <div class="mx-0 mx-sm-auto tab-pane fade" id="step25">
+                             <!-- Conteúdo da Pergunta 24 -->
+                             <!-- ... (código da pergunta 24) ... -->
+                                <p>
+                                    <strong class="text-dark">Questão 24: Como você avalia o nível de acesso e da velocidade da Internet do Campus Universitário do Araguaia – UFMT para implementação das tecnologias oriundas da <span data-bs-toggle="tooltip" data-bs-placement="top" title="O termo 'Indústria 4.0' refere-se à quarta revolução industrial, caracterizada pela integração de tecnologias avançadas, tais como Internet das Coisas (IoT), inteligência artificial, big data, computação em nuvem e automação. Esta revolução tem o potencial de proporcionar maior eficiência na tomada de decisões baseada em dados, melhorias na qualidade dos serviços e uma abordagem mais sustentável e inovadora."><strong style="color: blue;">Indústria 4.0</strong></span>?</strong>
+                                    <small class="d-block">Marque 0 para insatisfatório e 10 para satisfatório</small>
+                                </p>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec6_0" name="tec6" value="0" required> <label for="opcao_tec6_0">0</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec6_1" name="tec6" value="1" required> <label for="opcao_tec6_1">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec6_2" name="tec6" value="2" required> <label for="opcao_tec6_2">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec6_3" name="tec6" value="3" required> <label for="opcao_tec6_3">3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec6_4" name="tec6" value="4" required> <label for="opcao_tec6_4">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec6_5" name="tec6" value="5" required> <label for="opcao_tec6_5">5</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec6_6" name="tec6" value="6" required> <label for="opcao_tec6_6">6</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec6_7" name="tec6" value="7" required> <label for="opcao_tec6_7">7</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec6_8" name="tec6" value="8" required> <label for="opcao_tec6_8">8</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec6_9" name="tec6" value="9" required> <label for="opcao_tec6_9">9</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="opcao_tec6_10" name="tec6" value="10" required> <label for="opcao_tec6_10">10</label>
+                                </div>
+                             <!-- Botão 24-->
+                                     <div class="text-end mt-3">
+                                       <button type="submit" class="btn btn-primary" name="submit">Enviar Respostas</button>
+                                       <small class="form-text text-muted">Marque pelo menos uma opção antes de prosseguir, você irá para a página de resultados.</small>
+                                     </div>
+                        </div>
+               </div>
+
+
+
+
+                        <!-- Chamada do Código .js Funciona com as 24 perguntas normais-->
+            <script type="text/javascript" src="{{ url_for('static', filename='mdb5-free-standard/js/mdb.umd.min.js')}}"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+            <script type="text/javascript">
+
+                // Verificar totalQuestion e cadastrar o numero total
+                const totalQuestions = 25;
+                let currentQuestion = 1;
+
+                function showQuestion(questionNumber) {
+                    // Oculta todas as perguntas
+                    for (let i = 1; i <= totalQuestions; i++) {
+                        document.getElementById(`step${i}-tab`).classList.remove('active');
+                        document.getElementById(`step${i}`).classList.remove('show', 'active');
+                    }
+
+                    // Exibe apenas a pergunta atual
+                    document.getElementById(`step${questionNumber}-tab`).classList.add('active');
+                    document.getElementById(`step${questionNumber}`).classList.add('show', 'active');
+                }
+
+                function nextQuestion() {
+                    // Verifica se todas as perguntas foram respondidas antes de avançar
+                    if (currentQuestion === 1) {
+                        const email = document.getElementById('email').value;
+                        const tempo = document.getElementById('tempo').value;
+                        const setor = document.getElementById('setor').value;
+                        const tipo_usuario = document.querySelector('input[name="tipo_usuario"]:checked');
+
+                        // Verifica se algum campo está vazio
+                        if (!email || !tempo || !setor || !tipo_usuario) {
+                            alert("Por favor, responda todos os campos antes de prosseguir.");
+                            return;
+                        }
+                    } else if (currentQuestion >= 2 && currentQuestion <= 7) {
+                        // Verifique se a pergunta é entre 2 e 7
+                        const inputs = document.querySelectorAll(`input[name="estrategia${currentQuestion - 1}"]:checked`);
+                        if (inputs.length === 0) {
+                            alert(`Por favor, responda sobre estrategia ${currentQuestion - 1} antes de prosseguir.`);
+                            return;
+                        }
+                    } else if (currentQuestion >= 8 && currentQuestion <= 13) {
+                        // Verifique se a pergunta é entre 8 e 13
+                        const inputs = document.querySelectorAll(`input[name="processo${currentQuestion - 7}"]:checked`);
+                        if (inputs.length === 0) {
+                            alert(`Por favor, responda sobre processo ${currentQuestion - 7} antes de prosseguir.`);
+                            return;
+                        }
+                    } else if (currentQuestion >= 14 && currentQuestion <= 19) {
+                        // Verifique se a pergunta é entre 14 e 19
+                        const inputs = document.querySelectorAll(`input[name="infra${currentQuestion - 13}"]:checked`);
+                        if (inputs.length === 0) {
+                            alert(`Por favor, responda sobre infraestrutura ${currentQuestion - 13} antes de prosseguir.`);
+                            return;
+                        }
+                    } else if (currentQuestion >= 20 && currentQuestion <= 25) {
+                        // Verifique se a pergunta é entre 20 e 25
+                        const inputs = document.querySelectorAll(`input[name="tec${currentQuestion - 19}"]:checked`);
+                        if (inputs.length === 0) {
+                            alert(`Por favor, responda sobre tecnologia ${currentQuestion - 19} antes de prosseguir.`);
+                            return;
+                        }
+                    }
+
+                    // Avança para a próxima pergunta ou executa a ação desejada
+                    if (currentQuestion < totalQuestions) {
+                        currentQuestion++;
+                        showQuestion(currentQuestion);
+                    }
+                }
+
+
+                // Função para lidar com cliques no botão "Próximo"
+                function handleNextButtonClick(event) {
+                    nextQuestion();
+                }
+
+                // Inicialmente, mostra apenas a primeira pergunta
+                showQuestion(currentQuestion);
+
+                // Anexa ouvintes de eventos aos botões "next1" até "next24"
+                for (let i = 1; i <= totalQuestions; i++) {
+                    const nextButton = document.getElementById(`next${i}`);
+                    nextButton.addEventListener('click', handleNextButtonClick);
+                }
+
+            </script>
+            <script>
+                // Inicializa os tooltips do Bootstrap
+                var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+                var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                    return new bootstrap.Tooltip(tooltipTriggerEl)
+                });
+            </script>
+  </form>
+ </body>
+</html>
+
+

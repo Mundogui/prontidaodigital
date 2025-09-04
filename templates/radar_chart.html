@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico Radar - {{ setor }}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        /* Adicione estilos personalizados aqui, se necessário */
+        body {
+            padding: 20px; /* Adicione algum espaçamento para melhor aparência */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1 class="text-center">Gráfico Radar - {{ setor }}</h1>
+
+            <!-- Adicione a imagem do gráfico diretamente usando o atributo src -->
+            <div class="text-center">
+                <img src="data:image/png;base64,{{ encoded_image }}" alt="Radar Chart" class="img-fluid">
+            </div>
+
+            <!-- Tabelas -->
+<div class="card mb-4">
+  <div class="card-header">
+    <i class="fas fa-table me-1"></i> Indice para mapeamento de cada Pergunta do Questionário.
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Dimensão</th>
+            <th>Código</th>
+            <th>Variáveis do Diagnóstico</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="6">Estratégia</td>
+            <td>ComunicE1</td>
+            <td>Estratégias de comunicação.</td>
+          </tr>
+          <tr>
+            <td>ServNuvemE2</td>
+            <td>serviços baseados em nuvem.</td>
+          </tr>
+          <tr>
+            <td>AutomSisE3</td>
+            <td>automatização de sistemas.</td>
+          </tr>
+          <tr>
+            <td>GerPatPropE4</td>
+            <td>Geração de patentes e propriedade intelectual.</td>
+          </tr>
+          <tr>
+            <td>TransfDigE5</td>
+            <td>Percepção sobre a transformação digital e Avaliação do impacto da Indústria 4.0 na competitividade.</td>
+          </tr>
+          <tr>
+            <td>EspInfraDadE6</td>
+            <td>Existência de especialistas e infraestrutura para análise de dados.</td>
+          </tr>
+          <tr>
+            <td rowspan="6">Processos</td>
+            <td>ColetDadosP7</td>
+            <td>Coleta e Análise de Dados para a Gestão Acadêmica.</td>
+          </tr>
+          <tr>
+            <td>ProcAutomP8</td>
+            <td>Existência de processos automatizados.</td>
+          </tr>
+          <tr>
+            <td>ProcPersExP9</td>
+            <td>implementação de processos de personalização.</td>
+          </tr>
+          <tr>
+            <td>ProcInfoP10</td>
+            <td>Desenho de processos acadêmicos para facilitar o compartilhamento ágil de informações.</td>
+          </tr>
+          <tr>
+            <td>RealVirtP11</td>
+            <td>Integração de realidade virtual e realidade aumentada nas operações acadêmicas.</td>
+          </tr>
+          <tr>
+            <td>ProcAprendP12</td>
+            <td>Sistemas de aprendizagem de máquina.</td>
+          </tr>
+          <tr>
+            <td rowspan="6">Infraestrutura</td>
+            <td>InfraTiSisI13</td>
+            <td>Avaliação da infraestrutura de TI da universidade.</td>
+          </tr>
+          <tr>
+            <td>InfServNuvI14</td>
+            <td>Utilização de serviços em nuvem no ensino, pesquisa e extensão.</td>
+          </tr>
+          <tr>
+            <td>Imp3DAtivI15</td>
+            <td>Integração de impressoras 3D em atividades de ensino e pesquisa.</td>
+          </tr>
+          <tr>
+            <td>PlanImpSegI16</td>
+            <td>Planejamento e implementação de soluções de segurança.</td>
+          </tr>
+          <tr>
+            <td>InfraIotI17</td>
+            <td>Presença de sistemas de (IOT) “Internet of things”.</td>
+          </tr>
+          <tr>
+            <td>InfraAiI18</td>
+            <td>Utilização de tecnologias de inteligência artificial.</td>
+          </tr>
+          <tr>
+            <td rowspan="6">Tecnologia</td>
+            <td>AutoProcT19</td>
+            <td>Nível de automação dos processos.</td>
+          </tr>
+          <tr>
+            <td>TecI4.0T20</td>
+            <td>Emprego de tecnologias da indústria 4.0.</td>
+          </tr>
+          <tr>
+            <td>TecSegT21</td>
+            <td>Tecnologias e procedimentos de segurança adotados.</td>
+          </tr>
+          <tr>
+            <td>CapHumT22</td>
+            <td>Capacitar recursos humanos em tecnologias para Indústria 4.0.</td>
+          </tr>
+          <tr>
+            <td>AlunDadosT23</td>
+            <td>Uso de tecnologia de análise de dados.</td>
+          </tr>
+          <tr>
+            <td>AccesVelT24</td>
+            <td>Avaliação do nível de acesso e velocidade da Internet.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+            <!-- Botão para retornar ao questionário -->
+            <form action="{{ url_for('admin') }}" method="get" class="text-center mt-3">
+                <button type="submit" class="btn btn-success">Retornar ao Inicio</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Adicione o script opcional do Bootstrap para estilização -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+

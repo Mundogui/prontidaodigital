@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        /* Adicione estilos personalizados aqui, se necessário */
+        body {
+            padding: 20px; /* Adicione algum espaçamento para melhor aparência */
+        }
+
+        /* Estilo para ajustar o espaçamento entre os botões e os títulos */
+        form {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="text-center">Nível de Prontidão da Organização: {{ level }}</h2>
+
+            <!-- Adicione a imagem do gráfico diretamente usando o atributo src -->
+            <div class="text-center">
+                <img src="data:image/png;base64,{{ plot_image }}" alt="Gráfico" class="img-fluid">
+            </div>
+
+            <!-- Adicione os botões com os links externos -->
+            <form action="{{ url_for('external_link') }}" method="get" target="_blank">
+                <h2>Propostas para elevar o Nível Inicial</h2>
+                <button type="submit" class="btn btn-success">Inicial</button>
+            </form>
+
+            <form action="{{ url_for('external_link2') }}" method="get" target="_blank">
+                <h2>Propostas para elevar o nível Gerenciado</h2>
+                <button type="submit" class="btn btn-success">Gerenciado</button>
+            </form>
+
+            <form action="{{ url_for('external_link3') }}" method="get" target="_blank">
+                <h2>Propostas para elevar o nível Definido</h2>
+                <button type="submit" class="btn btn-success">Definido</button>
+            </form>
+
+            <form action="{{ url_for('external_link4') }}" method="get" target="_blank">
+                <h2>Propostas para Manutenção do nível de prontidão Integrado</h2>
+                <button type="submit" class="btn btn-success">Integrado</button>
+            </form>
+
+            <!-- Adicione o botão para retornar ao início -->
+            <form action="{{ url_for('index') }}" method="get" class="text-center">
+                <button type="submit" class="btn btn-success">Retornar ao Início</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Adicione o script opcional do Bootstrap para estilização -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

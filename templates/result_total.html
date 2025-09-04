@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        /* Adicione estilos personalizados aqui, se necessário */
+        body {
+            padding: 20px; /* Adicione algum espaçamento para melhor aparência */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="text-center">GRÁFICO COM RESULTADO TOTAL</h2>
+
+            <!-- Adicione a imagem do gráfico diretamente usando o atributo src -->
+            <div class="text-center">
+                <img src="data:image/png;base64,{{ plot_image }}" alt="Gráfico" class="img-fluid">
+            </div>
+
+            <!-- Botão para retornar ao questionário -->
+            <form action="{{ url_for('admin') }}" method="get" class="text-center mt-3">
+                <button type="submit" class="btn btn-success">Retornar ao Inicio</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Adicione o script opcional do Bootstrap para estilização -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
