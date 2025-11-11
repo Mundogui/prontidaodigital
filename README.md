@@ -57,22 +57,6 @@ Segundo Yu et al. (2021), uma PoC demonstra a viabilidade técnica de um protót
 
 ---
 
-## 💻 Interfaces do Sistema
-
-- **Página Principal (Mobile):**  
-  ![Figura 4 - Página principal em um celular](https://github.com/user/repo/assets/figura4.png)  
-  *Fonte: Autoria própria.*
-
-- **Página Principal (Notebook):**  
-  ![Figura 5 - Página principal em um notebook](https://github.com/user/repo/assets/figura5.png)  
-  *Fonte: Autoria própria.*
-
-- **Dashboard Administrativo:**  
-  ![Figura 9 - Tela Administrativa](https://github.com/user/repo/assets/figura9.png)  
-  *Fonte: Autoria própria.*
-
----
-
 ## 📊 Visualizações e Gráficos
 
 Os resultados do autodiagnóstico são apresentados em múltiplas formas visuais, permitindo interpretação detalhada da **maturidade digital institucional**.
@@ -98,8 +82,6 @@ autodiagnostico-prontidao-digital/
 │   ├── templates/            # Páginas HTML (Jinja2)
 │   └── database/             # Base SQLite
 │
-├── data/
-│   └── questionarios/        # Arquivos de coleta (CSV / JSON)
 │
 └── README.md                 # Este arquivo
 
