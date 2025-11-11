@@ -1,5 +1,13 @@
 # 🧭 Autodiagnóstico de Prontidão Digital
 
+[![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/Flask-3.0-lightgrey?logo=flask&logoColor=black)](https://flask.palletsprojects.com/)
+[![SQLite](https://img.shields.io/badge/Database-SQLite-003B57?logo=sqlite&logoColor=white)](https://www.sqlite.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1234567.svg)](https://doi.org/10.5281/zenodo.1234567)
+[![Build Status](https://img.shields.io/badge/Build-Passing-success.svg)]()
+[![Made with ❤️ in Brazil](https://img.shields.io/badge/Made%20with%20❤️-Brazil-green)]()
+
 ![Python Logo](https://www.python.org/static/community_logos/python-logo-master-v3-TM.png)
 
 **Autor:** Guilherme Lopes dos Santos  
@@ -11,61 +19,78 @@
 
 ## 🎯 Descrição do Projeto
 
-Este repositório reúne o **protótipo funcional** e a documentação do sistema **“Autodiagnóstico de Prontidão Digital”**, desenvolvido como parte da dissertação de mestrado no Programa de Pós-Graduação em Administração (PPGA/UFF), em colaboração com a Universidade Federal de Mato Grosso (UFMT).
+Este repositório apresenta o sistema **“Autodiagnóstico de Prontidão Digital”**, desenvolvido como produto tecnológico da dissertação de mestrado no **Programa de Pós-Graduação em Administração (PPGA/UFF)** em colaboração com a **Universidade Federal de Mato Grosso (UFMT)**.
 
-O projeto foi inspirado nas tecnologias da **Indústria 4.0** e visa avaliar o **nível de prontidão digital** de universidades públicas, apoiando decisões estratégicas para **transformação digital** e integração tecnológica institucional.
+Inspirado nos conceitos da **Indústria 4.0**, o sistema tem como propósito avaliar o **nível de prontidão digital** de universidades públicas, promovendo decisões estratégicas orientadas por dados e apoiando a transformação digital institucional.
 
 ---
 
 ## 🧩 Objetivos
 
-1. **Propor e validar** um modelo de prontidão digital adaptado à gestão universitária.
-2. **Desenvolver** um sistema web interativo de autodiagnóstico.
-3. **Mensurar** os níveis de maturidade digital de docentes e técnicos.
-4. **Fornecer** uma ferramenta escalável, replicável e acessível a outras instituições.
+- **Propor e validar** um modelo de prontidão digital voltado à gestão universitária.  
+- **Desenvolver** uma aplicação web para autodiagnóstico de maturidade digital.  
+- **Mensurar e visualizar** os níveis de prontidão digital com base em dimensões de estratégia, processos, tecnologia e infraestrutura.  
+- **Oferecer** uma ferramenta escalável e replicável para diferentes instituições públicas.
 
 ---
 
 ## ⚙️ Arquitetura do Sistema
 
-O sistema foi desenvolvido com uma **arquitetura de três camadas (Frontend, Backend e Banco de Dados)**, conforme o modelo **Client-Server**.
+O sistema foi construído em **arquitetura de três camadas (Frontend, Backend e Banco de Dados)**, baseada no modelo **Client-Server**.
 
 ![Arquitetura do Protótipo](https://www.publicdomainpictures.net/pictures/330000/velka/technology-2020-15851520000wf.jpg)
 *Fonte: Autoria própria.*
 
-- **Frontend:** Interface web responsiva construída com **HTML**, **CSS**, **JavaScript** e **MDB Bootstrap**, combinando o **Material Design da Google** com os componentes do **Bootstrap**.
-- **Backend:** Desenvolvido em **Python** com o **microframework Flask**, responsável pelo roteamento, lógica de negócios e integração com o banco de dados.
-- **Banco de Dados:** Utiliza o **SQLite**, projetado para armazenar eficientemente as respostas dos questionários submetidos pelos usuários (Jeon et al., 2019).
+| Camada | Tecnologias | Função Principal |
+|:--|:--|:--|
+| **Frontend** | HTML5, CSS3, JavaScript, MDB Bootstrap | Interface interativa, responsiva e moderna baseada em Material Design. |
+| **Backend** | Python 3.12 + Flask | Processamento lógico, integração com banco e controle de rotas. |
+| **Banco de Dados** | SQLite | Armazena respostas dos usuários e resultados do autodiagnóstico. |
+| **Hospedagem / IDE** | PythonAnywhere | Plataforma de execução e testes de aplicações Python na nuvem. |
 
 ---
 
-## 🧠 Tecnologias Utilizadas
+## 🧠 Tecnologias Fundamentais
 
-| Camada | Tecnologia | Descrição |
-|:--------|:-------------|:------------|
-| **Banco de Dados** | SQLite | Leve, eficiente e amplamente usado em dispositivos embarcados e aplicações locais (Jeon et al., 2019). |
-| **Backend** | Python + Flask | Plataforma multiparadigma ideal para aplicações científicas e web (Kumar & Panda, 2019; Mufid et al., 2019). |
-| **Frontend** | MDB Bootstrap | Combina o poder do Bootstrap com a estética do Material Design, garantindo responsividade e usabilidade. |
-| **IDE / Hospedagem** | PythonAnywhere | Ambiente para execução e testes de aplicações Python na nuvem. |
+Segundo **Jeon et al. (2019)**, o **SQLite** é um mecanismo leve e eficiente amplamente usado em software embarcado e aplicações locais.  
+O **Python**, conforme **Kumar e Panda (2019)**, destaca-se por sua natureza multiparadigma e por fornecer bibliotecas para análise e ciência de dados, enquanto o **Flask**, de acordo com **Mufid et al. (2019)**, oferece um microframework simples e extensível para aplicações web.  
+Para a prova de conceito (**PoC**), o Flask viabilizou a prototipagem ágil do sistema, validando a aplicabilidade do modelo de prontidão digital.  
+O frontend, desenvolvido com **MDB Bootstrap**, combina a simplicidade do Bootstrap com a sofisticação do Material Design, resultando em uma experiência de usuário rica e responsiva.
 
 ---
 
 ## 🧪 Prova de Conceito (PoC)
 
-O **Flask** foi adotado pela sua simplicidade e flexibilidade para o desenvolvimento rápido de um **Proof of Concept (PoC)**.  
-Segundo Yu et al. (2021), uma PoC demonstra a viabilidade técnica de um protótipo, permitindo validar funcionalidades e interações antes da implantação final.
+A abordagem **Proof of Concept (PoC)** permitiu verificar a viabilidade técnica do protótipo antes da sua expansão.  
+Segundo **Yu et al. (2021)**, o PoC em software tem como foco validar desempenho, usabilidade e confiabilidade em um ambiente controlado, servindo como base para a implementação completa.
 
 ---
 
-## 📊 Visualizações e Gráficos
+## 💻 Interfaces do Sistema
 
-Os resultados do autodiagnóstico são apresentados em múltiplas formas visuais, permitindo interpretação detalhada da **maturidade digital institucional**.
+### Página Principal (Mobile)
+![Figura 4 - Página principal em um celular](https://github.com/user/repo/assets/figura4.png)  
+*Fonte: Autoria própria.*
 
-- **Matriz 2x2 de Prontidão Digital (Figura 10)**  
-  Representa a classificação dos respondentes em quatro níveis: *Inicial, Gerenciado, Definido e Integrado* (Westerman et al., 2012).
+### Página Principal (Notebook)
+![Figura 5 - Página principal em um notebook](https://github.com/user/repo/assets/figura5.png)  
+*Fonte: Autoria própria.*
 
-- **Gráfico Radar (Figura 11)**  
-  Exibe a média das respostas por dimensão, evidenciando forças e fraquezas setoriais.
+### Dashboard Administrativo
+![Figura 9 - Tela Administrativa](https://github.com/user/repo/assets/figura9.png)  
+*Fonte: Autoria própria.*
+
+---
+
+## 📊 Visualizações e Análises
+
+Os resultados do autodiagnóstico são apresentados através de:
+
+- **Matriz 2x2 de Prontidão Digital (Figura 10):**  
+  Adaptação do modelo de **Westerman et al. (2012)**, categorizando as instituições nos níveis *Inicial, Gerenciado, Definido* e *Integrado*.  
+
+- **Gráficos Radar (Figura 11):**  
+  Representam as médias por dimensão, destacando forças e fraquezas setoriais.  
 
 ![Dashboards e Visualizações](https://upload.wikimedia.org/wikipedia/commons/a/ae/Digital_transformation.webp)
 
@@ -82,9 +107,7 @@ autodiagnostico-prontidao-digital/
 │   ├── templates/            # Páginas HTML (Jinja2)
 │   └── database/             # Base SQLite
 │
+├── data/
+│   └── questionarios/        # Dados de respostas e testes
 │
 └── README.md                 # Este arquivo
-
-
-
-![Modelo de Prontidão Digital](https://www.publicdomainpictures.net/pictures/560000/velka/digitale-transformation-1703238796NiE.jpg)
