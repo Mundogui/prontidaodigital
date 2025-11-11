@@ -107,7 +107,5 @@ autodiagnostico-prontidao-digital/
 │   ├── templates/            # Páginas HTML (Jinja2)
 │   └── database/             # Base SQLite
 │
-├── data/
-│   └── questionarios/        # Dados de respostas e testes
 │
 └── README.md                 # Este arquivo
