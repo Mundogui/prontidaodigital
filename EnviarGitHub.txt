@@ -4,7 +4,7 @@ git init
 git add . 
 git commit -m "primeiro commit"
 git branch -M main 
-git remote add origin https://github.com/Mundogui/Dalm-.git (endereço do reporitorio no github)
+git remote add origin https://github.com/Mundogui/ProjetoQuestionarioMDB.git (endereço do reporitorio github)
 git pull origin main --rebase
 git push origin main
 
